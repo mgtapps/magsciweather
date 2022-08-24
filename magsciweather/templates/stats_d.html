@@ -1,0 +1,29 @@
+{% extends 'base.html'%}
+
+{% block head %}
+<title>Analysis</title>
+{% endblock %}
+{% block body %}
+<div class = "content">
+    <h2 style="color: blue; text-align: center"> Hello {{current_user.user_name}}</h2><br>
+    
+
+<div class = "subb" style="margin:0 auto;">
+     <h3 style="color: blue; text-align: center">  {{year}} Rainfall data</h3><br>
+    {% for row in data %}
+    <p style="color: blue;text-align: center">There was {{ row[1] }}mm of rain in {{row[3]}} <br> </p>
+    {% endfor %}
+
+   
+</div><br><br>
+     <ul class ="ll">
+     
+        <li><p style="color: blue;text-align: center">To return <a href="analysis">click here</a><br> </p></li>
+    </ul>
+   
+    <br><br><br><br>
+    
+
+    </div>
+{% endblock %}
+   

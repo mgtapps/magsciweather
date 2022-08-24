@@ -1,0 +1,37 @@
+{% extends 'base.html'%}
+
+{% block head %}
+<title>Download</title>
+{% endblock %}
+{% block body %}
+<div class = "content">
+    
+    <h3 id = "info" style="text-align: center">{{current_user.user_name}}'s Download page</h3>
+<br>
+    <form action="/down_load" method='get' align = 'center'>
+        
+        <div class="form-group">
+     
+            <label for="download">enter<span class ="warn"> down</span>to download</label>
+            <input type="text"  id = "download" name="d_ll" style="width:100px"/></div>
+        <div class="form-group">
+            
+            <button type="download" class="btn btn-success">submit</button></div>
+    </form>
+    
+    
+    
+    <ul class ="ll">
+        <li><h4 id = "info" style="text-align: center">to complete <span class ="warn"> <a href="re_load">click here</a></span> for secure download</h4></li>
+        <li>
+        </li>
+        
+        </ul>
+    
+       
+
+
+
+
+    </div>
+{% endblock %}

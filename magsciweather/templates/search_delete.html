@@ -1,0 +1,77 @@
+{% extends 'base.html'%}
+
+{% block head %}
+<title>Search and delete</title>
+
+{% endblock %}
+
+{% block body %}
+<div class = "content">
+    
+    <h3 style="color: blue; text-align: center"> Search results</h3><br>
+    {% if start_date %}
+        <div class = "subb" style="margin:0 auto;">
+        
+        <h3 style="color: blue; text-align: center"> {{start_date}} to {{end_date}} </h3><br>
+        <table class = "tcenter">
+            <tr>
+                <th>rain</th>
+                <th>T</th>
+                <th>date</th>
+
+
+            </tr>
+            {% for each in data %}
+
+                <tr>
+                    <td>{{ each[1] }}</td>
+                    <td>{{ each[4] }}</td>
+                    <td>{{ each[2] }}</td>
+
+
+                </tr>
+            {% endfor %}
+
+        </table></div>
+    {% else %}
+        <h4 style="color: blue; text-align: center">Pick start and end dates for your search below:</h4><br>
+        
+
+    {% endif %}
+    
+        
+
+    <form action="/search_delete" method='get' >
+            <div class="form-group">
+
+                <label >start date: <input  class= "form-control" type="date" name = "start_date" ></label></div>
+            <div class="form-group">
+
+                <label >end date: <input  class= "form-control" type="date" name = "end_date" ></label></div>
+            <div class="container">
+                <button type="submit" class="btn btn-success">Search</button></div>
+    </form>
+    <br>
+    
+    
+    <br>
+    <br>
+    
+    <div>
+        
+    <h4 style="color: blue; text-align: center"><a href="/delete_some/{{start_date}}/{{end_date}}">Delete</a></h4></div><br><br>
+    <div><p style="color: blue; text-align: center">Keep a copy by cutting and pasting into a spreadsheet or downloading using download option</p><br><p style="color: blue; text-align: center">If you wish to delete one record, run search for one day or use modify page.</p></div>
+    
+    
+    <br>
+    <br>
+    <br>
+    
+    
+    
+
+
+</div>
+
+
+{% endblock %}

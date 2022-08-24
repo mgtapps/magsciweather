@@ -1,0 +1,40 @@
+{% extends 'base.html'%}
+
+{% block head %}
+<title>Update </title>
+
+{% endblock %}
+
+{% block body %}
+<div class = "content">
+    <h3 style="text-align: center">Update Task (enter default values if not changed)</h3>
+    
+    
+    <form action="/update/{{dshelf.id}}" method='post' align = 'center'>
+        <div class="form-group">
+            <label >date:
+                <input  class= "form-control" type="date" name = "date" value="{{dshelf.date_created}}"></label></div>
+        
+        <div class="form-group">
+            <label for="rain">New rain value</label>
+            <input type="number" step="any" name="rain" id="rain" value="{{dshelf.rain}}">
+        </div>
+        <div class="form-group">
+            <label for="month">New month</label>
+            <input type="text" name="month" id="month" value="{{dshelf.month}}">
+        </div>
+        <div class="form-group">
+            <label for="temperature">New temperature value</label>
+            <input type="number" step="any" name="temperature" id="temperature" value="{{dshelf.temperature}}">
+        </div>
+        <div class="container">
+            <button type="submit" class="btn btn-success">Update</button>
+    
+        </div>
+    </form>
+
+
+</div>
+
+
+{% endblock %}

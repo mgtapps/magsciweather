@@ -1,0 +1,148 @@
+{% extends 'base.html'%}
+
+{% block head %}
+<title>Input and Search</title>
+
+{% endblock %}
+
+{% block body %}
+<div class = "content">
+    
+    <h4 style="color: blue; text-align: center"> Hello {{current_user.user_name}}</h4>
+    
+    
+            
+    {% if not shelfs %}
+        <h2 style="color: blue; text-align: center"> Weather data</h2>
+    {% else %}
+        <h2 id = "info" style="text-align: center">Your weather data</h2>
+        <table class = "tcenter">
+            <tr>
+                <th>rain</th>
+                <th>T</th>
+                <th>month</th>
+
+
+            </tr>
+            {% for shelf in shelfs %}
+
+                <tr>
+                    <td>{{ shelf.rain }}</td>
+                    <td>{{ shelf.temperature }}</td>
+                    <td>{{ shelf.month }}</td>
+
+
+                </tr>
+            {% endfor %}
+
+        </table>
+    {% endif %}
+    <br>
+    {% if dshelfs|length == 0 %}
+    <h2 id = "info" style="text-align: center"></h2>
+    {% else %}
+    
+    <table class = "tcenter">
+        <tr>
+            <th>rain(mm)</th>
+            <th>temperature</th>
+            <th>month</th>
+            <th>date</th>
+            <th>actions</th>
+        </tr>
+        {% for dshelf in dshelfs %}
+        
+            <tr>
+                <td>{{ dshelf.rain }}</td>
+                <td>{{ dshelf.temperature }}</td>
+                <td>{{ dshelf.month }}</td>
+                <td>{{ dshelf.date_created }}</td>
+                <td>
+                    <a href="/delete/{{dshelf.id}}">Delete</a>
+                    <br>
+                    <a href="/update/{{dshelf.id}}">Update</a>
+                </td>
+            </tr>
+        {% endfor %}
+    
+    </table>
+    {% endif %}
+    <br>
+    
+    {% if data_s|length == 0 %}
+    <h2 id = "info" style="text-align: center"></h2>
+    {% else %}
+    
+    <table class = "tcenter">
+            <tr>
+                <th>rain</th>
+                <th>T</th>
+                <th>date</th>
+
+
+            </tr>
+            {% for each in data_s %}
+
+                <tr>
+                    <td>{{ each[1] }}</td>
+                    <td>{{ each[4] }}</td>
+                    <td>{{ each[2] }}</td>
+
+
+                </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+    
+    
+    <br>
+    <ul class ="ll">
+        <li><h3 id = "info"  style="text-align: center">Display last 3  <a href="reverse_list">entries</a>, most recent first</h3></li></ul> 
+    <ul class ="ll">
+        <li><h3 id = "info"  style="text-align: center">Add new data  <a href="input_link">entries</a></h3></li></ul>
+    
+    <ul class ="ll">
+        <li><h3 id = "info"  style="text-align: center">Search by month, rain or temperature  <a href="search_link">click here</a></h3></li><br>
+        </ul>
+    
+    <br>
+    <ul class ="ll">
+        <li><h3 id = "info"  style="text-align: center">Search by dates with option to delete  <a href="sd_link">click here</a></h3></li>
+        </ul>
+    <br>
+    <ul class ="ll">
+        <li><h3 id = "info"  style="text-align: center">Modify the data <a href="modify_link">click here</a></h3></li>
+        </ul>
+    <br>
+    
+    
+        
+    <ul class ="ll">
+        <li><h3 id = "info"  style="text-align: center">Analysis <a href="analysis">click here</a></h3></li>
+    </ul>
+    <br>
+    
+    <ul class ="ll">
+        
+    
+        <li><h3 id = "info"  style="text-align: center">download data <a href="down_load">click here</a></h3></li></ul>
+    <br>
+    <br>
+    <ul class ="ll">
+    
+        <li><h3 id = "info"  style="text-align: center">Delete all existing data (cannot undo this step) <a href="delete_all">click here</a></h3></li>
+    
+        </ul>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+    
+    
+
+
+</div>
+
+
+{% endblock %}

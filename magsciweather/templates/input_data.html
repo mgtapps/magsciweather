@@ -1,0 +1,45 @@
+{% extends 'base.html'%}
+
+{% block head %}
+<title>Input</title>
+
+{% endblock %}
+
+{% block body %}
+<div class = "content">
+    
+    <h4 style="color: blue; text-align: center">Please enter all fields</h4>
+    
+    
+    <br>
+    <form action="/input_search" method='post'>
+        <div class="form-group">
+            <label >date:
+                <input  class= "form-control" type="date" name = "date" ></label></div>
+                
+        <div class="form-group">
+            <label for="rain">rain:</label> 
+            <input class="form-control" type="number" step="any" id = "rain" name="rain" min="0.0" max="50.0" style="width:100px"/>
+        </div>
+        <div class="form-group">        
+            <label for="temperature">temperature:</label> 
+            <input class="form-control" type="number" step="any" id="temperature" name="temperature" min="-10.0" max="50.0" style="width:100px"/>
+        </div>
+        
+        <div class="container">
+       
+        <button type="submit" class="btn btn-success">Add</button></div>
+    </form>
+    <br>
+    
+    <br>
+    <br>
+    
+    
+    
+
+
+</div>
+
+
+{% endblock %}

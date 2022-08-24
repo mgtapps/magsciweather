@@ -1,0 +1,53 @@
+{% extends 'base.html'%}
+
+{% block head %}
+<title>Analysis</title>
+{% endblock %}
+{% block body %}
+<div class = "content">
+    <h2 style="color: blue; text-align: center"> Hello {{current_user.user_name}}</h2><br>
+
+<div class = "subb" style="margin:0 auto;">
+    <h3 style="color: blue; text-align: center"> Rainfall</h3><br>
+    <h3 style="color: blue; text-align: center"> {{year}}  Monthly totals and daily averages</h3><br>
+    <p style="color: darkslateblue;text-align: center"> ---month- -----total/mm --- average/mm<br> </p>
+    {% for each in result %}
+ 
+<p style="color: blue;text-align: center"> {{each[0]}} ----- {{each[1]}} -------- {{each[2]}}-- </p>
+{% endfor %}
+
+</div><br><br>
+<ul class="ll">
+
+    <li><p style="color: blue;text-align: center">To view the data as recorded <a href="stats_d">click here</a><br> </p></li>
+
+</ul>
+    
+    
+    <br><br><br><br>
+<div style="text-align:center">
+        
+    
+        <h4 style="text-align: center"> weather data</h4>
+
+        <img style="align: centre" src="/plot.png" alt="my plot" height="auto" width="80%">
+    </div><br><br>
+<div style="text-align:center">
+    <br><br>
+        <img style="align: centre" src="/plot1.png" alt="my plot" height="auto" width="80%">
+            </div><br><br>
+    
+<div class = "subb" style="margin:0 auto;">
+<h3 style="color: blue; text-align: center"> Temperature</h3><br>
+<h3 style="color: blue; text-align: center"> {{year_t}}  Monthly maximum temperatures</h3><br>
+    
+<p style="color: darkslateblue;text-align: center"> ---month- -----maximum/ <sup>o</sup>C</p><br>
+{% for each in max_temp_data %}
+    <p style="color: blue;text-align: center"> {{each[0]}} ----- {{each[1]}} </p>
+{% endfor %}
+
+</div><br><br><br><br>
+
+    </div><br><br><br><br>
+{% endblock %}
+   

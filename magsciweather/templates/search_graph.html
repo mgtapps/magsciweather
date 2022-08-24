@@ -1,0 +1,58 @@
+{% extends 'base.html'%}
+
+{% block head %}
+<title>Input and Search</title>
+
+{% endblock %}
+
+{% block body %}
+<div class = "content">
+    
+    <h2 style="color: blue; text-align: center"> Hello {{current_user.user_name}}</h2>
+    
+    <br>
+    <ul class ="ll">
+        
+        <li><h3 id = "info" style="text-align: center">For a particular value of rain or temperature, enter in the box below. <br> Or for data in a particular month, enter <span class ="warn">e.g March</span></h3></li>
+        </ul>
+    <br>
+    
+    
+    <form action="/input_search" method='get' >
+        
+        
+                    
+        <div class="form-group">
+           <div class="form-group">
+            
+            <label>month:
+                <input class="form-control"type="text" id = "month" name="s" type = "text" style="width:100px"></label></div>
+     
+            <label for="rain">rain:</label>
+            <input class="form-control" type="number" step="any" id = "rain" name="c_t" min="0.0" max="50.0" style="width:100px"/></div>
+        
+        <div class="form-group">        
+            <label for="temperature">temperature:</label> 
+            <input class="form-control" type="number" step="any" id="temperature" name="t_mp" min="-10.0" max="50.0" style="width:100px"/></div>
+        <div class="container">
+            <button type="submit" class="btn btn-success">Search</button></div>
+       
+    </form>
+    <br>
+    <ul class ="ll">
+        <li><h3 id = "info" style="text-align: center">For all data <span class ="warn"> <a href="list_all">click here</a></span></h3></li></ul>
+    <br>
+    
+    <br>
+    <br>
+    <br>
+    <br>
+    
+    
+    
+
+
+</div>
+
+
+{% endblock %}

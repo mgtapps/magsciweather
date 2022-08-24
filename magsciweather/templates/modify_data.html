@@ -1,0 +1,52 @@
+{% extends 'base.html'%}
+
+{% block head %}
+<title>Modify</title>
+{% endblock %}
+
+{% block body %}
+<div class = "content">
+
+    <br>
+    
+    
+    <br>
+    <ul class ="ll">
+        <li><h3 id = "info"  style="text-align: center">Modify the data </h3></li>
+        <li><h3 id = "info" style="text-align: center">Search for a rainfall value or month to update. </h3></li></ul>
+    <br>
+    <br>
+    <form action="/modify" method='get' >
+        
+        <div class="form-group">
+
+            <label >date: <input  class= "form-control" type="date" name = "d_t" ></label></div>
+        <div class="form-group">
+                <label >month:
+                    <input class="form-control" type="text" id = "month" name="s" style="width:100px"></label></div>
+        <div class="form-group">
+                   <label for="rain">rain:</label><input class="form-control" type="number" step="any" id = "rain" name="c_t" min="0.0" max="50.0" style="width:100px"/></div>
+         
+        <div class="form-group">        
+                <label for="temperature">temperature:</label> 
+                <input class="form-control" type="number" step="any" id="temperature" name="t_mp" min="-10.0" max="50.0" style="width:100px"/></div>
+        
+        
+        <div class="container">
+            <button type="submit" class="btn btn-success">Modify</button></div>
+        
+    </form>
+    
+    <br>
+    <br>
+    <br>
+    <br>
+    
+    
+    
+
+
+</div>
+
+
+{% endblock %}

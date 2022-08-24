@@ -1,0 +1,27 @@
+{% extends 'base.html'%}
+
+{% block head %}
+<title>Index page</title>
+{% endblock %}
+{% block body %}
+
+<div class = "content">
+    <h4 style="text-align: center">Please enter your details</h4> 
+	<form action="/" method = "post"> 
+		<div class="form-group"> 
+			<label for="username">User Name</label> 
+			<input class="form-control" type="username" id="username" name = "nam" placeholder="Enter your User Name"> 
+		</div> 
+		<div class="form-group"> 
+			<label for="pass">Password</label> 
+			<input class="form-control" type="password" id="pass" name = "pw" placeholder="Enter your password"> 
+		</div> 
+		<div class="container"> 
+			<input type="submit" value="Sign in"> 
+			
+		</div> 
+	</form> 
+    
+    
+{% endblock %}
+   
